@@ -1,2 +1,4 @@
 ### Simple Project For WithYouWithMe
-Live Link -> https://dichill.github.io/WYWMAIO/
+Only Cats are working for now!
+
+See the actual site: https://dichill.github.io/WYWMAIO/
