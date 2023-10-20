@@ -40,22 +40,22 @@ function gotoPage(type) {
     switch(type) {
         // Cats
         case 0:
-            location.href='/pages/cat.html'
+            location.href='pages/cat.html'
             break;
 
         // Lord of the Rings
         case 1:
-            location.href='/pages/omd.html'
+            location.href='pages/omd.html'
             break;
 
         // Open Movie Database
         case 2:
-            location.href='/pages/lotr.html'
+            location.href='pages/lotr.html'
             break;
 
         // Spaceships
         case 3:
-            location.href='/pages/spaceships.html'
+            location.href='pages/spaceships.html'
             break;
     }
 }
