@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shiba - Home</title>
+
+
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- We are also going to use Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+</head>
+
+<body class="bg-dark">
+    <!-- Start of Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SHIBA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                APIs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/cat.html">Cat API</a></li>
+                                <li><a class="dropdown-item" href="/pages/omd.html">Open Movie Database API</a></li>
+                                <li><a class="dropdown-item" href="/pages/lotr.html">Lord of the Rings API</a></li>
+                                <li><a class="dropdown-item" href="/pages/hyrule.html">Hyrule Compendium API</a></li>
+                                <li><a class="dropdown-item" href="/pages/spaceships.html">Spaceships API</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Start of Container -->
+    <div class="container-fluid">
+        <div class="container-sm">
+            <div id="carouselCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+
+
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Cats -->
+                    <div class="carousel-item active">
+                        <img src="https://images.hdqwalls.com/wallpapers/cats-ik.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cats</h5>
+                            <p>Do you love cats? So do I! Check me out!</p>
+                            <button type="button" onclick="gotoPage(0)" class="btn btn-primary">Launch</button>
+                        </div>
+                    </div>
+                    <!-- End of Cats-->
+
+                    <!-- Movies -->
+                    <div class="carousel-item">
+                        <img src="https://images.hdqwalls.com/wallpapers/final-score-2018-action-movie-97.jpg"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Movies</h5>
+                            <p>Fan of movies? Check me out!</p>
+                            <button type="button" onclick="gotoPage(1)" class="btn btn-primary">Launch</button>
+                        </div>
+                    </div>
+                    <!-- End of Movies -->
+
+                    <!-- Lord of the Rings-->
+                    <div class="carousel-item">
+                        <img src="https://dapsmagic.com/wp-content/uploads/2023/03/The-Lord-of-the-Rings_-Return-of-the-King-Featured-Image-1.jpg"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Lord of the Rings</h5>
+                            <p>Do you want to know whos precious?</p>
+                            <button type="button" onclick="gotoPage(2)" class="btn btn-primary">Launch</button>
+                        </div>
+                    </div>
+                    <!-- End of the Lord of the Rings-->
+
+                    <!-- Spaceships -->
+                    <div class="carousel-item">
+                        <img src="https://parabolicarc.com/wp-content/uploads/2023/07/Falcon_Heavy_launch_January2023.jpg"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Spaceships</h5>
+                            <p>Want to know Spaceship events? Check it out!</p>
+                            <button type="button" onclick="gotoPage(3)" class="btn btn-primary">Launch</button>
+                        </div>
+                    </div>
+                    <!-- End of Spaceships-->
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Container -->
+
+    <!-- Footer -->
+    <footer class="text-center text-white fixed-bottom" >
+        <!-- Grid container -->
+        <div class="container p-4"></div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            © 2023 Copyright
+            <a class="text-white text-decoration-none" href="https://github.com/Dichill">Dichill</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- This is where our main functions are stored-->
+    <script src="static/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

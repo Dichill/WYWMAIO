@@ -1,0 +1,60 @@
+/* 
+    Im not that good when it comes to styling so I just use Bootstrap. However
+    there will be some instances where I have to actually do styling. 
+*/
+
+#limitDropdown,
+#BreedDropdown {
+    border-color: gray !important;
+}
+
+#uno,
+#dos,
+#tres .img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.row-o {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column-o {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column-o img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.sticky-container {
+    position: relative;
+    padding: 5px;
+}
+
+#MainContainer {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+@media screen and (max-width: 800px) {
+    .column-o {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column-o {
+        flex: 100%;
+        max-width: 100%;
+    }
+}

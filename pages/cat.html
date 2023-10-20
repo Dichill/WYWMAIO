@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shiba - Cat</title>
+
+
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- We are also going to use Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+</head>
+
+<body class="bg-dark">
+    <!-- Start of Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SHIBA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                APIs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/cat.html">Cat API</a></li>
+                                <li><a class="dropdown-item" href="/pages/omd.html">Open Movie Database API</a></li>
+                                <li><a class="dropdown-item" href="/pages/lotr.html">Lord of the Rings API</a></li>
+                                <li><a class="dropdown-item" href="/pages/hyrule.html">Hyrule Compendium API</a></li>
+                                <li><a class="dropdown-item" href="/pages/spaceships.html">Spaceships API</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Start of Container -->
+    <div class="container-fluid">
+        <div class="h-100 d-flex align-items-center justify-content-center" id="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="d-none w-100 sticky-container bg-dark" id="MainContainer">
+            <div class="d-flex justify-content-between w-100">
+                <div class="d-inline-flex m-0">
+                    <button type="button" class="btn btn-primary" onclick="Generate()">Generate</button>
+                    <select class="form-select bg-dark text-white border-dark-subtle dropdown-menu-dark mx-2"
+                        style="width: 70px;" aria-label="Limit" id="limitDropdown">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-light" onclick="Clear()">Clear</button>
+                </div>
+
+                <div class="d-inline-flex">
+                    <select class="form-select bg-dark text-white border-dark-subtle dropdown-menu-dark"
+                        style="width: 150px;" aria-label="Limit" id="BreedDropdown">
+                        <option value="" selected>All Breed</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-o d-flex flex-wrap mb-5">
+            <div class="column-o" id="uno">
+
+            </div>
+            <div class="column-o" id="dos">
+
+            </div>
+            <div class="column-o" id="tres">
+
+            </div>
+            <div class="column-o" id="four">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Container -->
+
+    <!-- Footer -->
+    <footer class="text-center text-white fixed-bottom">
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            © 2023 Copyright
+            <a class="text-white text-decoration-none" href="https://github.com/Dichill">Dichill</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- This is where our main functions are stored-->
+    <script src="../static/main.js"></script>
+    <script src="../static/pages-js/cat.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
