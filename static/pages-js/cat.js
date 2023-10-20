@@ -1,3 +1,4 @@
+// Once the DOM has been intialized, execute the following functions below.
 document.addEventListener("DOMContentLoaded", async function () {
     console.log("Cat Page Initialized");
 
@@ -12,6 +13,7 @@ let selectedCat = ''
 const columns = ['uno', 'dos', 'tres', 'four']
 
 function Clear() {
+    // Simply Iterate from all Columns, get their Nodes by ID and setting their innerHTML to ''
     columns.forEach(column => {
         var col = document.getElementById(column)
         col.innerHTML = ''
@@ -38,9 +40,15 @@ async function Generate() {
     generatedContent.forEach(image => {
         // Randomly select any columns
         let index = undefined
+
+        // To make sure that other devices that has a small screen can have a superb experience,
+        // We check the width and let all the images that are going through to the 4th Column so that it will
+        // Go down. If I set it to other columns, it will be hard as it wont show at the bottom but rather to its original position
         if (width < 600) {
             index = columns[3]
         } else {
+            // If we, however, have a viable screen width, we can simply randomize in which column should the
+            // images be placed
             const randomIndex = Math.floor(Math.random() * columns.length)
             index = columns[randomIndex]
         }
@@ -49,9 +57,13 @@ async function Generate() {
         // Create a new Image element
         var img = document.createElement("img");
         img.src = image
+
+        // For the Download Modal
         img.setAttribute("data-bs-toggle", "modal");
         img.setAttribute("data-bs-target", "#exampleModal");
         img.onclick = () => {
+            // Let the whole scope know that when the user clicks on a cat, this is the URL of the said Cat.
+            // I could, however make a modal where it shows the description of the Cat, so I might make some changes soon.
             selectedCat = image
         }
 
@@ -82,12 +94,16 @@ async function getBreedList() {
 
             // Create a new child for the ComboBox Options
             const data = await response.json()
-
+            
+            // Once we get the data, we can simply parse it and make it simple for us
+            // To access.
             const nameAndIdArray = data.map(dataObj => ({
                 name: dataObj.name,
                 id: dataObj.id,
             }));
 
+            // In here we loop each list and get their name & Id so we can place them to the Option
+            // of our Select
             nameAndIdArray.forEach(dataObj => {
                 var option = document.createElement("option");
                 option.text = dataObj.name;
@@ -98,17 +114,4 @@ async function getBreedList() {
     } catch (err) {
         console.log('An error has occured => ' + err)
     }
-}
-
-async function downloadImage(imageSrc) {
-    const image = await fetch(imageSrc)
-    const imageBlog = await image.blob()
-    const imageURL = URL.createObjectURL(imageBlog)
-
-    const link = document.createElement('a')
-    link.href = imageURL
-    link.download = 'image file name here'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
 }
