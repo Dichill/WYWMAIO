@@ -1,3 +1,4 @@
+// It is unsecure that it is stored here, but ill change the key after 1 week or so.
 var CAT_API_KEY = 'live_S3Afda6CQfdbadvX82WADcerlQUuDIrqx34WVkGm6ZW2oiS6V6rz5JaouIzrTHbM'
 var LOTR_API_KEY = ''
 var OPEN_MOVIE_API_KEY = ''
