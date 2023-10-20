@@ -55,12 +55,38 @@
 
     <!-- Start of Container -->
     <div class="container-fluid">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Download Image</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Do you want to download this picture of a very cute cat?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a id='dlbttn' class="btn btn-success" role="button" data-bs-dismiss="modal" onclick="window.open(selectedCat)">
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal-->
+
+        <!-- Spinner -->
         <div class="h-100 d-flex align-items-center justify-content-center" id="loader">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
+        <!-- End of Spinner -->
 
+
+        <!-- Generation -->
         <div class="d-none w-100 sticky-container bg-dark" id="MainContainer">
             <div class="d-flex justify-content-between w-100">
                 <div class="d-inline-flex m-0">
@@ -89,7 +115,10 @@
                 </div>
             </div>
         </div>
+        <!-- End of Generation -->
 
+
+        <!-- Image Grids -->
         <div class="row-o d-flex flex-wrap mb-5">
             <div class="column-o" id="uno">
 
@@ -104,6 +133,7 @@
 
             </div>
         </div>
+        <!-- End of Image Grids -->
     </div>
 
     <!-- End of Container -->

@@ -5,8 +5,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     await getBreedList()
 });
 
+// In order to know what Cat the user selected
+let selectedCat = ''
+
+// ID's of all 4 columns so we can choose from them
+const columns = ['uno', 'dos', 'tres', 'four']
+
 function Clear() {
-    
+    columns.forEach(column => {
+        var col = document.getElementById(column)
+        col.innerHTML = ''
+    });
 }
 
 async function Generate() {
@@ -19,9 +28,6 @@ async function Generate() {
 
     // Call the function from main.js to get the data for Cats
     var generatedContent = await getResponse(0, data);
-
-    // ID's of all 4 columns so we can choose from them
-    const columns = ['uno', 'dos', 'tres', 'four']
 
     // We need to get the width of the device so that if we the user
     // is a mobile user we can just stack the images to four so that
@@ -43,6 +49,12 @@ async function Generate() {
         // Create a new Image element
         var img = document.createElement("img");
         img.src = image
+        img.setAttribute("data-bs-toggle", "modal");
+        img.setAttribute("data-bs-target", "#exampleModal");
+        img.onclick = () => {
+            selectedCat = image
+        }
+
         holder.appendChild(img)
     });
 }
@@ -86,4 +98,17 @@ async function getBreedList() {
     } catch (err) {
         console.log('An error has occured => ' + err)
     }
+}
+
+async function downloadImage(imageSrc) {
+    const image = await fetch(imageSrc)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
+
+    const link = document.createElement('a')
+    link.href = imageURL
+    link.download = 'image file name here'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
 }
